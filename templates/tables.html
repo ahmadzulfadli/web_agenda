@@ -1,0 +1,80 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+	<div class="container-fluid px-4">
+		<h1 class="mt-4 mb-4">Daftar Agenda</h1>
+		<div class="card mb-4">
+			<div class="card-body" style="font-size: 20px;">
+				Ini adalah rekapan kegiatan Wakil Dekan III Fakultas Sains Dan Teknologi Universitas Islam Negri
+				Sultan Syarif Kasim Riau.
+			</div>
+		</div>
+		<div class="card mb-4" style="font-size: 25px;">
+			<div class="card-header">
+				<i class="fas fa-table me-1"></i>
+				Rekapan Agenda Wakil Dekan III
+			</div>
+			<div class="card-body ">
+				<table id="datatablesSimple" style="font-size: 25px;">
+					<thead>
+						<tr>
+							<th style="text-align: center;">Nama Kegiatan</th>
+							<th style="text-align: center;">Tempat</th>
+							<th style="text-align: center;">Waktu</th>
+							<th style="text-align: center;">Tanggal</th>
+							<th style="text-align: center;">File</th>
+							<th style="text-align: center;">Actions</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th>Nama Kegiatan</th>
+							<th>Tempat</th>
+							<th>Waktu</th>
+							<th>Tanggal</th>
+							<th>File</th>
+							<th>Actions</th>
+						</tr>
+					</tfoot>
+					<tbody>
+						{% for post in post %}
+						<tr>
+							<td>{{post.kegiatan}}</td>
+							<td>{{post.tempat}}</td>
+							<td>{{post.waktu}}</td>
+							<td>{{post.tanggal}}</td>
+							<td style="text-align: center;">
+								<p> {% if post.file %}
+										{{post.file.name}}
+									{% endif %}
+								</p>
+								<a href="{{post.file.url}}" class="btn btn-primary btn-sm" target="_blank">Download</a>
+							</td>
+							<td style="text-align: center;">
+								<a href="{% url 'ubah_data' post.id %}" class="btn btn-info">Ubah</a>
+								<a href="{% url 'hapus' post.id %}" class="btn btn-danger">Hapus</a>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+					<a href="{% url 'export_xls' %}" class="btn btn-success mb-3">Cetak</a>
+				</table>
+				<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+				<script>
+					{% for pesan in messages %}
+						swal({
+							title: "Success!",
+							text: "{{pesan}}",
+							icon: "success",
+							button: "Ok",
+							}); 
+					{% endfor %}
+				</script>
+			</div>
+		</div>
+	</div>
+
+</main>
+{% endblock %}

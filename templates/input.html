@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main>
+	<div class="container-fluid px-4">
+		<h2 class="mt-4 mb-4">Input Agenda</h2>
+		<form method="POST" action="" enctype="multipart/form-data">
+			<style>
+				label {
+					font-size: 20px;
+				}
+			</style>
+			{% csrf_token %}
+			<div class="row g-3 align-items-center mb-4">
+				<div class="col-md-1">
+					<label for="kegiatan" class="col-form-label">Kegiatan</label>
+				</div>
+				<div class="col-md-8">
+					<input id="kegiatan" name="kegiatan" placeholder="Kegiatan" class="form-control">
+				</div>
+			</div>
+			<div class="row g-3 align-items-center mb-4">
+				<div class="col-md-1">
+					<label for="tempat" class="col-form-label">Tempat</label>
+				</div>
+				<div class="col-md-8">
+					<input id="tempat" name="tempat" placeholder="Tempat" class="form-control">
+				</div>
+			</div>
+			<div class="row g-3 align-items-center mb-4">
+				<div class="col-md-1">
+					<label for="waktu" class="col-form-label">Waktu</label>
+				</div>
+				<div class="col-md-8">
+					<input id="waktu" name="waktu" placeholder="Waktu (22:00)" class="form-control">
+				</div>
+			</div>
+			<div class="row g-3 align-items-center mb-4">
+				<div class="col-md-1">
+					<label for="tanggal" class="col-form-label">Tanggal</label>
+				</div>
+				<div class="col-md-8">
+					<input id="tanggal" name="tanggal" placeholder="Tanggal (03/04/2000)" class="form-control">
+				</div>
+			</div>
+			<div class="row g-3 align-items-center mb-4">
+				<div class="col-md-1">
+					<label for="file" class="col-form-label">Upload File</label>
+				</div>
+				<div class="col-md-5">
+					<input type="file" id="file" name="file" class="form-control">
+				</div>
+			</div>
+
+
+			<button type="submit" class="btn btn-primary">Kirim</button>
+		</form>
+	</div>
+	{% for pesan in messages %}
+	<p id="messages">{{pesan}}</p>
+	{% endfor %}
+</main>
+{% endblock %}s

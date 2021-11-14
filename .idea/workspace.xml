@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6869b7e8-5aef-406a-8a0b-23381c55c18b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/web.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/promin/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/promin/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/promin/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/promin/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/promin/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/kalender.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/styles1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/log.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/login.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/datatables-simple-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/kalender.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/input.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kalender.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tables.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/registrasi.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="204wOFPzA0VZvSBERxfd2RVuO0j" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6869b7e8-5aef-406a-8a0b-23381c55c18b" name="Default Changelist" comment="" />
+      <created>1635317136712</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635317136712</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

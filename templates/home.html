@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<main>
+    <div class="row">
+        <div class="col-xl-7 mt-3 ms-3 me-auto">
+            <div class="card mb-4" style="height: 100%;">
+                <div class="card-header" style="font-size: 20px;">
+                    <i class="fas fa-chart-area me-1"></i>
+                    Perencanaan Agenda
+                </div>
+                <div style="text-align: center;">
+                    <a href="{% url 'input_Agenda' %}" class="btn btn-success mt-3" style="width: 400px;">Tambah
+                        Data</a>
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple" style="font-size: 20px;">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;">Nama Kegiatan</th>
+                                <th style="text-align: center;">Tempat</th>
+                                <th style="text-align: center;">Waktu</th>
+                                <th style="text-align: center;">Tanggal</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Nama Kegiatan</th>
+                                <th>Tempat</th>
+                                <th>Waktu</th>
+                                <th>Tanggal</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {% for post in kegiatan %}
+                            <tr>
+                                <td>{{post.r_kegiatan}}</td>
+                                <td>{{post.r_tempat}}</td>
+                                <td>{{post.r_waktu}}</td>
+                                <td>{{post.r_tanggal}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 mt-3 ms-auto me-5">
+            <div class="card mb-4">
+                <div class="card-header" style="text-align: center; font-weight: bold;">
+                    Profil
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-column align-items-center text-center p-1 py-1">
+                        <img class="rounded-circle img-thumbnail" src="{% static 'img/fadli.jpg' %}" width="90">
+                        <span class="font-weight-bold">Kunaifi S.T., M.T.</span>
+                        <span class="text-black-50">kunaifi@gmail.com</span>
+                        <span>Pekanbaru-Riau</span>
+                        <div style="text-align: justify;" class="mt-2 p-3">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, maxime! A corporis veniam vero consequatur porro est reprehenderit recusandae. Voluptates repellat incidunt esse nisi ipsum natus quos eveniet eos dignissimos?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        {% for pesan in messages %}
+            swal({
+                title: "Success!",
+                text: "{{pesan}}",
+                icon: "success",
+                button: "Ok",
+            });
+        {% endfor %}
+    </script>
+</main>
+{% endblock %}

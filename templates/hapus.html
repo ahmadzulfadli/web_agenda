@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card mb-4">
+    <div class="card-body" style="font-size: 20px;">
+        {% for post in model %}
+            <p>Apakah anda ingin menghapus item "{{post.kegiatan}}" ???</p>
+        {% endfor %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary" >Ya</button>
+            <a href="{% url 'tables' %}" class="btn btn-danger">Tidak</a>
+        </form>
+        
+    </div>
+</div>
+
+{% endblock %}

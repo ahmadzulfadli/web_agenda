@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main>
+    <div class="container-fluid px-4">
+        <h2 class="mt-4 mb-4">Ubah Data</h2>
+        <form method="POST" action="" enctype="multipart/form-data">
+            <style>
+                label {
+                    font-size: 20px;
+                }
+            </style>
+            {% csrf_token %}
+            <div class="row g-3 align-items-center mb-4">
+                <div class="col-md-1">
+                    <label for="kegiatan" class="col-form-label">Kegiatan</label>
+                </div>
+                <div class="col-md-8">
+                    <input id="kegiatan" name="kegiatan"  class="form-control" value="{{model.kegiatan}}">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mb-4">
+                <div class="col-md-1">
+                    <label for="tempat" class="col-form-label">Tempat</label>
+                </div>
+                <div class="col-md-8">
+                    <input id="tempat" name="tempat"  class="form-control" value="{{model.tempat}}">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mb-4">
+                <div class="col-md-1">
+                    <label for="waktu" class="col-form-label">Waktu</label>
+                </div>
+                <div class="col-md-8">
+                    <input id="waktu" name="waktu"  class="form-control" value="{{model.waktu}}">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mb-4">
+                <div class="col-md-1">
+                    <label for="tanggal" class="col-form-label">Tanggal</label>
+                </div>
+                <div class="col-md-8">
+                    <input id="tanggal" name="tanggal"  class="form-control" value="{{model.tanggal}}">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mb-4">
+				<div class="col-md-1">
+					<label for="file" class="col-form-label">Upload File</label>
+				</div>
+				<div class="col-md-5">
+                    {% if model.file %}
+                        <a href="">
+                            {{model.file}}
+                        </a>
+                        <input type="file" id="file" name="file" class="form-control" value="{{model.file}}">
+                    {% endif %}
+
+				</div>
+			</div>
+
+            <a href="{% url 'tables' %}" class="btn btn-danger">Kembali</a>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+
+        </form>
+    </div>
+</main>
+{% endblock %}s
