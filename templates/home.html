@@ -19,6 +19,7 @@
                     <table id="datatablesSimple" style="font-size: 20px;">
                         <thead>
                             <tr>
+                                <th style="text-align: center;">No</th>
                                 <th style="text-align: center;">Nama Kegiatan</th>
                                 <th style="text-align: center;">Tempat</th>
                                 <th style="text-align: center;">Waktu</th>
@@ -27,6 +28,7 @@
                         </thead>
                         <tfoot>
                             <tr>
+                                <th>No</th>
                                 <th>Nama Kegiatan</th>
                                 <th>Tempat</th>
                                 <th>Waktu</th>
@@ -36,6 +38,7 @@
                         <tbody>
                             {% for post in kegiatan %}
                             <tr>
+                                <td style="text-align: center;">{{forloop.revcounter}}</td>
                                 <td>{{post.r_kegiatan}}</td>
                                 <td>{{post.r_tempat}}</td>
                                 <td>{{post.r_waktu}}</td>
@@ -54,13 +57,16 @@
                 </div>
                 <div class="card-body">
                     <div class="d-flex flex-column align-items-center text-center p-1 py-1">
-                        <img class="rounded-circle img-thumbnail" src="{% static 'img/fadli.jpg' %}" width="90">
-                        <span class="font-weight-bold">Kunaifi S.T., M.T.</span>
-                        <span class="text-black-50">kunaifi@gmail.com</span>
-                        <span>Pekanbaru-Riau</span>
-                        <div style="text-align: justify;" class="mt-2 p-3">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, maxime! A corporis veniam vero consequatur porro est reprehenderit recusandae. Voluptates repellat incidunt esse nisi ipsum natus quos eveniet eos dignissimos?</p>
+                        <img class="rounded-circle img-thumbnail" src="{% static 'img/kunaifi.jpeg' %}" style="height: 120px; width: 120px;">
+
+                        <span class="font-weight-bold">Kunaifi, ST., PgDipEnST., M.Sc.</span>
+                        <span class="text-black-50">Pekanbaru-Riau</span>
+                        
+                        <div class="mt-2 p-3">
+                            <p style="text-align: center; font-weight: bold;">Bidang Keahlian:</p>
+                            <span style="text-align: center;"> Energi Terbarukan, Efisiensi Energi dan Sustainability</span>
                         </div>
+                        <i class="fas fa-facebook">E-Mail</i>
                     </div>
                 </div>
             </div>

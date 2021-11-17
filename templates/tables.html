@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 
 {% block content %}
@@ -17,9 +16,11 @@
 				Rekapan Agenda Wakil Dekan III
 			</div>
 			<div class="card-body ">
-				<table id="datatablesSimple" style="font-size: 25px;">
+				<a href="{% url 'export_xls' %}" class="btn btn-success mb-3">Cetak</a>
+				<table id="datatablesSimple" style="font-size: 20px;">
 					<thead>
 						<tr>
+							<th style="text-align: center;">No</th>
 							<th style="text-align: center;">Nama Kegiatan</th>
 							<th style="text-align: center;">Tempat</th>
 							<th style="text-align: center;">Waktu</th>
@@ -30,6 +31,7 @@
 					</thead>
 					<tfoot>
 						<tr>
+							<th>No</th>
 							<th>Nama Kegiatan</th>
 							<th>Tempat</th>
 							<th>Waktu</th>
@@ -41,13 +43,14 @@
 					<tbody>
 						{% for post in post %}
 						<tr>
+							<td style="text-align: center;">{{ forloop.revcounter }}</td>
 							<td>{{post.kegiatan}}</td>
 							<td>{{post.tempat}}</td>
 							<td>{{post.waktu}}</td>
 							<td>{{post.tanggal}}</td>
 							<td style="text-align: center;">
 								<p> {% if post.file %}
-										{{post.file.name}}
+									{{post.file}}
 									{% endif %}
 								</p>
 								<a href="{{post.file.url}}" class="btn btn-primary btn-sm" target="_blank">Download</a>
@@ -59,7 +62,6 @@
 						</tr>
 						{% endfor %}
 					</tbody>
-					<a href="{% url 'export_xls' %}" class="btn btn-success mb-3">Cetak</a>
 				</table>
 				<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 				<script>
@@ -69,7 +71,7 @@
 							text: "{{pesan}}",
 							icon: "success",
 							button: "Ok",
-							}); 
+						}); 
 					{% endfor %}
 				</script>
 			</div>

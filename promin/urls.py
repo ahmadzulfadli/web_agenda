@@ -16,7 +16,6 @@ urlpatterns = [
     path('tables/', tables, name="tables"),
     path('lihat/<str:id>/', lihat, name="lihat"),
 
-    path('user', user, name="user"),
     path('export/xls/', export_xls, name="export_xls"),
 
     path('registrasi/', registrasi, name="registrasi"),

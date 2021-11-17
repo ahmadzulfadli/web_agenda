@@ -1,7 +1,7 @@
 #============================================================================
 #----------------------------IMPORT------------------------------------------
 from django.db.models.fields import FilePathField
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import get_object_or_404, render, redirect, HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 import os
 
 from .forms import PostForm, AgendaForm, UserLogin
-from .models import PostAgenda, agenda
+from apps.models import PostAgenda, agenda
 from apps.resource import AgendaResource
 #----------------------------------------------------------------------------
 #============================================================================
@@ -94,8 +94,9 @@ def input_Agenda(request):
     
 @login_required(login_url='login')
 def ubah_data(request, id):
-    model = PostAgenda.objects.get(id=id)
+    model = get_object_or_404(PostAgenda, id=id)
     form = PostForm(instance=model)
+
     if request.method == "POST":
         if len(request.FILES) != 0:
             if len(model.file) > 0:
@@ -114,13 +115,11 @@ def ubah_data(request, id):
 
 @login_required(login_url='login')
 def hapus(request, id):
-    model = PostAgenda.objects.filter(id=id)
-
+    model = get_object_or_404(PostAgenda, id=id)
     if request.method == "POST":
+        if len(model.file) > 0:
+            os.remove(model.file.path)
         model.delete()
-        if len(request.FILES) != 0:
-            if len(model.file) > 0:
-                os.remove(model.file.path)
         messages.success(request, 'Data Berhasil Dihapus')
         return redirect('tables')
 
@@ -163,12 +162,6 @@ def lihat(request, id):
     }
     return render(request, 'views_pdf.html', context)
 
-@login_required(login_url='login')
-def user(request):
-    context = {
-
-    }
-    return render(request, 'account/user.html', context)
 #----------------------------------------------------------------------------
 #============================================================================
 
@@ -182,7 +175,3 @@ def export_xls(request):
     return response 
 #----------------------------------------------------------------------------
 #============================================================================
-
-
-
-
